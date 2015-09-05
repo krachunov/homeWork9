@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Problem1Test {
@@ -9,10 +10,17 @@ public class Problem1Test {
 		StudentsandCourses studAndCourse = new StudentsandCourses();
 
 		String file = new String("resources//students.txt");
-		@SuppressWarnings("unused")
+
 		TreeMap<String, HashSet<Person>> test = studAndCourse
 				.readPeopleFromFile(file);
-		System.out.println(test.size());
+
+		for (Map.Entry entry : test.entrySet()) {
+			System.out.println(entry.getKey());
+			HashSet<Person> people = (HashSet<Person>) entry.getValue();
+			for (Person person : people) {
+				System.out.println(" " + person.toString());
+			}
+		}
 	}
 
 }

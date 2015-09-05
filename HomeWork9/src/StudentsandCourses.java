@@ -15,7 +15,7 @@ public class StudentsandCourses {
 		File file = new File(fileName);
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line = br.readLine();
-			String regex = "|";
+			String regex = ":";
 
 			while (line != null) {
 				String tmp = line.trim();

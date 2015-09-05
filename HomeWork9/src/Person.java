@@ -1,4 +1,3 @@
-
 public class Person implements Comparable<Person> {
 	private String firstName;
 	private String lastName;
@@ -28,6 +27,12 @@ public class Person implements Comparable<Person> {
 	@Override
 	public int compareTo(Person o) {
 		return this.lastName.compareTo(o.lastName);
+	}
+
+	@Override
+	public String toString() {
+		return firstName + " " + lastName;
+
 	}
 
 }
