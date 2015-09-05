@@ -1,3 +1,4 @@
+
 public class Person implements Comparable<Person> {
 	private String firstName;
 	private String lastName;
@@ -5,6 +6,7 @@ public class Person implements Comparable<Person> {
 	public Person(String first, String last) {
 		setFirstName(first);
 		setLastName(last);
+
 	}
 
 	public String getFirstName() {
