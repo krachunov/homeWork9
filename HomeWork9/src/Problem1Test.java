@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Map;
@@ -16,6 +15,7 @@ public class Problem1Test {
 
 		for (Map.Entry entry : test.entrySet()) {
 			System.out.println(entry.getKey());
+			@SuppressWarnings("unchecked")
 			HashSet<Person> people = (HashSet<Person>) entry.getValue();
 			for (Person person : people) {
 				System.out.println(" " + person.toString());

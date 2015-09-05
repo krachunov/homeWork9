@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeMap;
 
 public class StudentsandCourses {
@@ -15,7 +13,7 @@ public class StudentsandCourses {
 		File file = new File(fileName);
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line = br.readLine();
-			String regex = ":";
+			String regex = "";
 
 			while (line != null) {
 				String tmp = line.trim();
