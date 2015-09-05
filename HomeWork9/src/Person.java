@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Person implements Comparable<Person> {
 	private String firstName;
 	private String lastName;
@@ -25,14 +27,31 @@ public class Person implements Comparable<Person> {
 	}
 
 	@Override
-	public int compareTo(Person o) {
-		return this.lastName.compareTo(o.lastName);
+	public String toString() {
+		return firstName+lastName;
 	}
 
 	@Override
-	public String toString() {
-		return firstName + " " + lastName;
+	public int hashCode() {
+		return (int) getFirstName().hashCode() + getLastName().hashCode();
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Person)) {
+			return false;
+		}
+		Person other = (Person) obj;
+		if (this.getFirstName().equals(other.getFirstName())) {
+			return (getLastName().equals(other.getLastName()));
+		} else {
+			return (this.getFirstName().equals(other.getFirstName()));
+		}
+	}
+
+	@Override
+	public int compareTo(Person o) {
+		return this.getLastName().compareTo(o.getLastName());
 	}
 
 }

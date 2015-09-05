@@ -8,3 +8,6 @@ Ivan     : Grigorov : C#
 Ivan     : Kolev    : SQL
 Vanya    : Angelova : Java
 Todor    : Georgiev : SQL
+Todor    : Georgiev : SQL
+Todor    : Georgiev : SQL
+Todor    : Georgiev : SQL
