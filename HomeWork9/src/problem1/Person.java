@@ -1,3 +1,4 @@
+package problem1;
 import java.util.Comparator;
 
 public class Person implements Comparable<Person> {
