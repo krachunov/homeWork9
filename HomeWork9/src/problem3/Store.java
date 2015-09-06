@@ -44,14 +44,14 @@ public class Store {
 		this.listOfProductsBySupplier = listOfProductsBySupplier;
 	}
 
-	private void addByTitle(String title, String supplier, double price, int id) {
-		Products product = new Products(title, supplier, price, id);
-		getListOfProductsByTitle().put(title, product);
+	private void addByTitle(Products product) {
+		String productTitle = product.getTitle();
+		getListOfProductsByTitle().put(productTitle, product);
 	}
 
-	private void addByPrice(String title, String supplier, double price, int id) {
-		Products product = new Products(title, supplier, price, id);
-		String priceValue = Double.toString(price);
+	private void addByPrice(Products product) {
+		Double productPrice = product.getPrice();
+		String priceValue = Double.toString(productPrice);
 		if (!getListOfProductsByPrice().containsKey(priceValue)) {
 			List<Products> listOfProducts = new ArrayList<Products>();
 			listOfProducts.add(product);
@@ -63,9 +63,15 @@ public class Store {
 		}
 	}
 
+	private void addBySupplier(Products product) {
+		String productSupplier = product.getSupplier();
+		// TODO How to implement price treeMap in to supplier TreeMap
+	}
+
 	public void add(String title, String supplier, double price, int id) {
-		addByTitle(title, supplier, price, id);
-		addByPrice(title, supplier, price, id);
+		Products product = new Products(title, supplier, price, id);
+		addByTitle(product);
+		addByPrice(product);
 	}
 
 	public boolean remove() {
