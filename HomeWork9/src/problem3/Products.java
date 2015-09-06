@@ -1,8 +1,10 @@
 package problem3;
 
+import java.util.Comparator;
+
 import problem1.Person;
 
-public class Products implements Comparable<Products> {
+public class Products implements Comparator<Products> {
 	private String title;
 	private String supplier;
 	private double price;
@@ -48,12 +50,6 @@ public class Products implements Comparable<Products> {
 	}
 
 	@Override
-	public int compareTo(Products arg0) {
-		return (this.getId() > arg0.getId() ? 1
-				: (this.getId() < arg0.getId() ? -1 : 0));
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -77,7 +73,12 @@ public class Products implements Comparable<Products> {
 			return false;
 		return true;
 	}
-	
 
+	@Override
+	public int compare(Products arg0, Products arg1) {
+
+		return (arg0.getId() > arg1.getId() ? 1
+				: (arg0.getId() < arg1.getId() ? -1 : 0));
+	}
 
 }
