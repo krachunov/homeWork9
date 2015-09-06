@@ -22,7 +22,7 @@ public class BiDictionaryTest {
 			System.out.println(i);
 		}
 		System.out.println("-----------");
-		distances.remove("Sofia", "Varna");
+		System.out.println(distances.remove("Sofia", "Varna"));
 		List<Integer> b = distances.findByKey1("Sofia");
 		for (Integer i : b) {
 			System.out.println(i);

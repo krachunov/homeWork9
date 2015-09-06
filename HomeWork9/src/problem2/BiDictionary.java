@@ -113,21 +113,24 @@ public class BiDictionary<K1, K2, T> {
 		// first we remove bothKey and get the element which matching
 		if (getValuesByBothKeys().containsKey(key3)) {
 			listMatching = getValuesByBothKeys().remove(key3);
-			System.out.println("Remove from Both key list");
+
 		}
 		// then we compares with every single key and remove only matching
 		if (getValuesByFirstKey().containsKey(key1)) {
 			for (T elementToRemov : listMatching) {
 				getValuesByFirstKey().get(key1).remove(elementToRemov);
 			}
-			System.out.println("Remove from first key list");
+
 		}
 		if (getValuesBySecondKey().containsKey(key2)) {
 			for (T elementToRemov : listMatching) {
 				getValuesBySecondKey().get(key2).remove(elementToRemov);
 			}
-			System.out.println("Remove from second key list");
 		}
-		return false;
+		if (listMatching.size() <= 0) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 }
